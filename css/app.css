@@ -1,3 +1,21 @@
+
+/* cover */
+#cover-container {
+    width:100%;
+    display:table;
+    *display:block; /* IE7 */
+}
+#cover-container > span {
+    display:table-cell;
+    *display:inline-block; /* IE7 */
+    vertical-align:middle;
+    text-align:center;
+}
+#cover-container > span > img {
+    width:100%;
+    max-width:400px;
+}
+
 /* general */
 html {
   position: relative;
@@ -9,6 +27,9 @@ body {
 	font-size: 18px;
 	color: #000;
 	background-color: #ffffff;
+}
+h2 {
+    font-size: 24px;
 }
 h1 {
 	font-family: "Lato", sans-serif !important;
@@ -136,10 +157,18 @@ footer {
 	position: absolute;
 	opacity: 0;
 	transition: all 1s;
-    padding: 15px 15px 15px 15px;
+    padding-left: 15px;
+    padding-right: 15px;
 }
 .panel-hover:hover {
 	opacity: .95;
+}
+
+.xs p {
+    font-size: 13px;
+}
+.xs h2 {
+    font-size: 18px;
 }
 .helper {
     display: inline-block;
@@ -153,9 +182,13 @@ footer {
     height: 150px;
     width: auto;
 }
-.project-panel p {
+.project-aligntable {
+    display: table;
+    height: 250px;
 }
-.project-panel p {
+.project-aligncell {
+    display: table-cell;
+    vertical-align: middle;
 }
 
 /* about */
