@@ -198,7 +198,8 @@ footer {
     height: auto;
 }
 .about-desc p {
-    width: 400px;
+    width: 100%;
+    max-width: 400px;
     float: left;
     font-family: "Lato", sans-serif !important;
     font-size: 18px;
@@ -206,7 +207,8 @@ footer {
     color: #000;   
 }
 .about-desc h2 {
-    width: 400px;
+    width: 100%;
+    max-width: 400px;
     font-weight: 700;
     float: left;
 	font-family: "Lato", sans-serif !important;
