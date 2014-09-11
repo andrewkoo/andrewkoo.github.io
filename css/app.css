@@ -198,6 +198,9 @@ footer {
     height: auto;
 }
 .about-desc p {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
     width: 100%;
     max-width: 400px;
     float: left;
@@ -207,6 +210,9 @@ footer {
     color: #000;   
 }
 .about-desc h2 {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
     width: 100%;
     max-width: 400px;
     font-weight: 700;
@@ -240,10 +246,10 @@ footer {
     text-align: center;
 }
 .xs h2 {
-    width: 100%;
-}1
+    max-width: 100%;
+}
 .xs p {
-    width: 100%;
+    max-width: 100%;
 }
 
 
