@@ -71,40 +71,45 @@ h1 {
     background: #ffffff;
     border-bottom: 1px solid #f1f1f1;  	
 }
+
 .navbar-default a {
-	color: inherit;
+    color: #000;
 	text-decoration: none;
-    background: #ffffff;
+    background: #ffffff!important;
 }
 .navbar-default a:hover {
-	color: inherit;
     background: #ffffff;
+    background-color: #ffffff;
 }
+
+/* andrew koo */
 .navbar-default .navbar-brand {
 	font-weight: 300;
 	font-size: 20px;
-	color: inherit;
-    background: #ffffff;
 }
 .navbar-default .navbar-brand:hover {
-	color: inherit;
-    background: #ffffff;
+    /* no change */
 }
+
+/* navigation buttons */
 .navbar-default .navbar-nav>li>a {
-    color: inherit;
+    color: #b3b3b3;
     background: #ffffff;
 }
 .navbar-default .navbar-nav>li>a:hover {
-    color: inherit;
-    background: #ffffff;
+    text-decoration: underline;
+    color: #b3b3b3;
+    background: #ffffff
 }
 .navbar-default .navbar-nav>.active>a {
-	color: inherit;
-    background: #ffffff;
+    text-decoration: underline;
+	color: #000;
+    background: #ffffff
 }
 .navbar-default .navbar-nav>.active>a:hover {
+    text-decoration: underline;
 	color: inherit;
-    background: #ffffff;
+    background: #ffffff
 }
 /* Prevent Collapsing */
 .navbar-collapse.collapse {
