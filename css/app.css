@@ -87,7 +87,7 @@ h1 {
 	color: inherit;
 }
 .navbar-default .navbar-nav>li>a {
-    color: #b3b3b3;
+    color: inherit;
 }
 .navbar-default .navbar-nav>li>a:hover {
     color: inherit;
