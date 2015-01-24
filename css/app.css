@@ -100,7 +100,7 @@ h1 {
 }
 .navbar-default .navbar-nav>.active>a:hover {
 	color: inherit;
-    background: inherit;
+    background: #ffffff;
 }
 /* Prevent Collapsing */
 .navbar-collapse.collapse {
