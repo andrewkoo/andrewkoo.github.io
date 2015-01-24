@@ -96,7 +96,7 @@ h1 {
 }
 .navbar-default .navbar-nav>.active>a {
 	color: inherit;
-    background: inherit;
+    background: #ffffff;
 }
 .navbar-default .navbar-nav>.active>a:hover {
 	color: inherit;
