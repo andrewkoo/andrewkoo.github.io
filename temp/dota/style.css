@@ -1,0 +1,53 @@
+h1 {
+    font: 20px sans-serif;
+}
+
+body {
+    font: 10px sans-serif;
+}
+
+.axis path,
+.axis line {
+    fill: none;
+    stroke: #000;
+    shape-rendering: crispEdges;
+}
+
+.y.axis path {
+    stroke: none;
+}
+
+.dot {
+    stroke: none;
+    opacity: .75;
+}
+
+.dot:hover {;
+    stroke: #000;
+    stroke-width: 2;
+    transition: .1s;
+}
+
+.tooltip {
+    background: rgba(255,255,255,.75);
+    padding: 5px;
+    font: 16px sans-serif;
+}
+
+.bar {
+  fill: #a9100d;
+  opacity: .75;
+  stroke-width: 0;
+}
+
+.bar:hover {
+  fill: #a9100d;
+  stroke-width: 2;
+  stroke: #000;
+  transition: .1s;
+  opacity: 1;
+}
+
+.trackingAxis path {
+    display: none;
+}
