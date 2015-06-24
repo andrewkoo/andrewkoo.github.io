@@ -1,7 +1,9 @@
 // Constants
 var margin = {top: 50, right: 50, bottom: 50, left: 50},
-    width = 900 - margin.left - margin.right,
-    height = 500 - margin.top - margin.bottom,
+
+    width = 800 - margin.left - margin.right,
+    height = 400 - margin.top - margin.bottom,
+
     csv = [], // Nested data (index by year)
     currData = [],
     sums = [],
@@ -9,6 +11,28 @@ var margin = {top: 50, right: 50, bottom: 50, left: 50},
     largestIteration = [true, true, true, true, true, true],
     caller = -1; // Increment and decrement flag
 var parseDate = d3.time.format("%m/%d/%y").parse;    
+
+
+function updateDesc() {
+    var descs = ["The first edition of <b>The International</b> was hosted by Valve in 2011. With an unprecedented prize pool of $1.6 million, it became the largest prize pool in electronic sports history.",
+                 "In 2012, more independent tournaments arose globally and in the online scene. <b>55 tournaments</b> are represented here with prize pools ranging from $1000 to $50,000. Valve matched the previous year's International prize at $1.6 million.",
+                 "The scene continued to grow through 2013, and the release of compendium sales allowed gamers to crowdfund an additional $1.3 million to be added to Valve's $1.6 million contribution to the International 3, bringing the total player winnings to nearly <b>$2.9 million</b>.",
+                 "There were over <b>158 tournaments</b> in 2014, with the largest being the International 4 at a prize pool of over $10 million. For context, this exceeded the prizes at the Super Bowl, the Masters golf tournament and the Tour de France.",
+                 "With half of 2015 remaining, the growth of electronic sports is evident. The <b>International 5</b> has already exceeded the past year's prize with months of crowd-funding to go. In addition, the <b>Asia Championships</b> emerged as a major tournament with an offering of over $3 million.",
+                 "The same tournaments are displayed on a <b>logarithmic scale</b>, where the relative increases in prize pools and number of tournaments are more visible.",
+                 "Annual tournament winnings are totalled here to give a bigger picture of industry. The latest datapoint in this set occurs in June 2015, so we can expect 2015 winnings to rise even higher in time."],
+        descWidths = [225, 125, 225, 225, 225, 225]
+    
+    d3.select(".desc").style("width", descWidths[iteration] + "px");
+    
+    d3.select(".desc")
+        .html(descs[iteration])
+        .style("opacity", 0)
+        .transition()
+        .duration(750)
+        .style("opacity", 1);
+}
+updateDesc();
 
 // Tooltip
 var tooltip = d3.select("body")
@@ -20,7 +44,8 @@ var tooltip = d3.select("body")
 function updateTooltip(d) {
     return (
         tooltip
-            .text( d.Tournament + ": $" + d.Prize.toString() )
+            .html("<b>"+d.Tournament+"</b> <br> Prize Pool: $" + d.Prize.toString()
+                 + "<br> Date: " + d.Start)
             .style("visibility", "visible")
     );
 }
@@ -34,8 +59,7 @@ var y = yLinear; // Container variable for easier use later
 var x = d3.time.scale()
     .range([0, width]);
 var r = d3.scale.linear()
-    .range([3, 40]);
-
+    .range([8, 40]);
 var xAxis = d3.svg.axis()
     .scale(x)
     .orient("bottom")
@@ -49,27 +73,27 @@ var yAxis = d3.svg.axis()
 // Initialize Tracking Bar
 var labels = ["2011", "2012", "2013", "2014", "2015", "Log", "Totals"];
 var trackScale = d3.scale.linear()
-    .range([0, width])
+    .range([0, width-margin.left])
     .domain([0, 7]);
 var trackingBar = d3.svg.axis()
     .scale(trackScale)
     .orient("bottom")
     .tickFormat(function(i) { return labels[i]; });
-var tracker = d3.select("body").append("svg")
-    .attr("width", width + margin.left + margin.right)
+var tracker = d3.select(".container").append("svg")
+    .attr("width", width+margin.left)
     .attr("height", 30)
 tracker.append("g")
-    .attr("transform", "translate(" + margin.left + ", 10 )")
+    .attr("transform", "translate(" + (margin.left+margin.left) + ", 10 )")
     .attr("class", "trackingAxis")
     .call(trackingBar);
 tracker.selectAll("text")
     .attr("transform", "translate(" + (width / 7)/2 + ", 0 )");
 tracker.append("rect")
-    .attr("x", margin.left)
+    .attr("x", margin.left+margin.left)
     .attr("y", 8)
     .attr("width", trackScale(1))
     .attr("height", 5)
-    .attr("fill", "#555")
+    .attr("fill", "#400")
     .attr("opacity", .75);
     
 // Initialize SVG
@@ -85,17 +109,17 @@ var gradient = svg
     .attr("y1", height)
     .attr("y2", 0)
     .attr("x1", "0")
-    .attr("x2", "0")
+    .attr("x2", width)
     .attr("id", "gradient")
     .attr("gradientUnits", "userSpaceOnUse");
 gradient
     .append("stop")
     .attr("offset", "0")
-    .attr("stop-color", "#555");
+    .attr("stop-color", "#0569ab");
 gradient
     .append("stop")
     .attr("offset", "1")
-    .attr("stop-color", "#a9100d");
+    .attr("stop-color", "#b00");
 
 // Load data
 d3.csv("data.csv", function(data) {
@@ -163,7 +187,7 @@ d3.csv("data.csv", function(data) {
         .attr("cy", function(d) { return y(d.Prize); })
         .attr("fill", "url(#gradient)")
         .on("mouseover", function(d) { updateTooltip(d); } )
-        .on("mousemove", function(){return tooltip.style("top", (event.pageY-10)+"px").style("left",(event.pageX+10)+"px");})
+        .on("mousemove", function(){return tooltip.style("top", (event.pageY-20)+"px").style("left",(event.pageX+15)+"px");})
         .on("mouseout", function(){return tooltip.style("visibility", "hidden");});
 });
 
@@ -222,10 +246,25 @@ function updateDots() {
     svg.selectAll( "circle.prev.dot" )
         .transition()
         .duration(750)
+        .style("fill-opacity", 1)
         .each( function()  {
             if (caller == 0 && iteration == 5) {
                 return svg.selectAll ( "circle.prev.dot" ).transition().duration(750).delay(750);
             }
+        })
+        .each( function(d)  {
+            
+            var start = parseDate(d.Start);
+            if (iteration == 0 && start > parseDate("01/01/12")) {
+                d3.select(this).transition().duration(750).style("fill-opacity", 0);
+            } else if (iteration == 1 && start > parseDate("01/01/13")) {
+                d3.select(this).transition().duration(750).style("fill-opacity", 0);
+            } else if (iteration == 2 && start > parseDate("01/01/14")) {
+                d3.select(this).transition().duration(750).style("fill-opacity", 0);
+            } else if (iteration == 3 && start > parseDate("01/01/15")) {
+                d3.select(this).transition().duration(750).style("fill-opacity", 0);
+            }
+            
         })
         .attr("r", function(d) { return r(d.Prize); })
         .attr("cx", function(d) { return x(d.Date); })
@@ -279,7 +318,7 @@ function updateBars() {
             .attr("class", "bar")
             .on("mouseover", function(d) { 
                     tooltip
-                        .text( "$" + d.sum )
+                        .html( "<b>Total Prize: $" + d.sum  +"</b>")
                         .style("visibility", "visible") })
             .on("mousemove", function(){return tooltip.style("top", (event.pageY-10)+"px").style("left",(event.pageX+10)+"px");})
             .on("mouseout", function(){return tooltip.style("visibility", "hidden");})
@@ -332,8 +371,10 @@ function updateTracker() {
         .attr("width", trackScale(iteration+1));
 }
 
+
 function controller() {
     updateTracker();
+    updateDesc();
     if (iteration <= 5) {
         updateDots();
     }

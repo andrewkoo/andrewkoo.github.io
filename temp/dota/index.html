@@ -9,23 +9,21 @@
     </head>
     <body>
         <h1>DotA 2 Tournament Prize Pools</h1>
-        <p>Haven't styled anything yet, but the visualization is more or less complete with a few bugs.</p>
-        <p>The logarithmic scale has the exact same datapoints as the linear scale. The change of scale helps discern the relative differences between the tournament prize pools and reveal the growth of small tournaments as well as large ones.</p>
-        <div class="buttons">
-            <input class ="button"
+        
+        <div class="container">
+            <input id ="button1"
                    name="decrementButton" 
                    type="button" 
                    value="Prev" 
                    onclick="decrement()" />
             
-            <input class ="button"
+            <input id ="button2"
                    name="incrementButton" 
                    type="button" 
                    value="Next" 
                    onclick="increment()" />
-            
-            
-        </div>
+        </div> 
+        <div class="desc"> </div>
     </body>
     <script type="text/javascript" src="script.js"></script>
 </html>
