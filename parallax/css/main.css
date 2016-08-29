@@ -161,16 +161,15 @@ main {
 .curtainContainer .curtain {width: 300%; height: 1px; background-color: #000000; position: relative; top: 25%; left: 0; opacity: 0}
 .curtainContainer .copy {position: absolute; bottom: 30%; left: 0; width: 100%; text-align: center;}
 
-b {font-size: 100px;}
+b {font-size: 45px;}
 
 /* Slide 1 */
 #slide-1 .bcg {background-image:url('../img/bcg_slide-1.jpg')}
-#slide-1 h2 {font-size: 80px; color: #fff;}
+#slide-1 h2 {font-size: 60px; color: #fff;}
     
 /* Slide 2 */
 /* #slide-2 .bcg {background: none; background-color: #fff; height: 100%; text-align: center} */
 #slide-2 .bcg {background-image:url('../img/bcg_slide-2.jpg')}
-#slide-2 b {font-size: 60px;}
 
 /* slide 3 */
 /* #slide-3 .bcg {background: none; background-color: #fff; height: 100%; text-align: center;} */
@@ -195,7 +194,6 @@ b {font-size: 100px;}
 /* slide 8 */
 /* #slide-8 .bcg {background: none; background-color: #fff; height: 100%; text-align: center} */
 #slide-8 .bcg {background-image:url('../img/bcg_slide-8.jpg')}
-#slide-8 b {background-color:#000; color:#fff; font-size: 60px;}
 
 /* Slide 9 */
 #slide-9 {position: relative;}
@@ -203,7 +201,6 @@ b {font-size: 100px;}
 #slide-9 .bcg {background-image:url('../img/bcg_slide-9.jpg')}
 #slide-9 .bcg2 {background-color:#000; position: fixed; bottom: 0; left: 0; opacity: 0; z-index: 1}
 #slide-9 h2 {font-size: 24px; color: #fff;}
-#slide-9 b {font-size:30px; color: #fff;}
 
 
 .hsContainer {
@@ -229,7 +226,7 @@ b {font-size: 100px;}
 	.hsContent h2,
 	.copy h2 {
 		color: #fff;
-		font-size: 45px;
+		font-size: 24px;
 		line-height: 48px;
 		margin-bottom: 12px;
 	}
