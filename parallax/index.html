@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Demo - How to create a parallax scrolling website</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+
+		<link rel="author" href="https://plus.google.com/u/0/109859280204979591787/about"/>
+
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/main.css">
+        <script src="js/vendor/modernizr-2.7.1.min.js"></script>
+        <style type="text/css">
+			.back-link a {
+				color: #4ca340;
+				text-decoration: none; 
+				border-bottom: 1px #4ca340 solid;
+			}
+			.back-link a:hover,
+			.back-link a:focus {
+				color: #408536; 
+				text-decoration: none;
+				border-bottom: 1px #408536 solid;
+			}
+			h1 {
+				height: 100%;
+				/* The html and body elements cannot have any padding or margin. */
+				margin: 0;
+				font-size: 14px;
+				font-family: 'Open Sans', sans-serif;
+				color: #1c1d1e;
+				font-size: 32px;
+				margin-bottom: 3px;
+			}
+			h2 {
+				color: #1c1d1e;
+				font-family: 'Open Sans', sans-serif;
+				font-weight: normal;
+			}
+			.entry-header .inner {
+				text-align: left;
+				margin: 0 auto 20px auto;
+				width: 800px;
+			}
+			.entry-header { padding-top: 20px; background-color: #fff; width:100%; position: fixed; top: 0; left: 0; z-index: 999999}
+		</style>
+    </head>
+    <body class="loading">
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+       	
+       
+       	
+       	<main>
+       	 
+	        <section id="slide-1" class="homeSlide">
+	        	<div class="bcg" data-center="background-position: 50% 0px;" data-top-bottom="background-position: 50% -100px;" data-anchor-target="#slide-1">
+		        	<div class="hsContainer">
+			    		<div class="hsContent" data-center="opacity: 1" data-106-top="opacity: 0" data-anchor-target="#slide-1 h2">
+				    		<h2>CHURCHILL</h2>
+			    		</div>
+		        	</div>
+	        	</div>
+		    </section>
+		    
+            <section id="slide-2" class="homeSlide ">
+                <div class="bcg"  data-anchor-target="#slide-2">
+                    <div class="curtainContainer">
+
+                        <div class="curtain" data-anchor-target="#slide-2"></div>
+                        <div class="copy" data-bottom-top="opacity: 0" data--100-bottom="opacity: 0" data--280-bottom="opacity: 1;" data-280-top="opacity: 1;" data-106-top="opacity: 0;" data-anchor-target="#slide-2 .copy">
+                            <h2>the consumer industry is <b>changing</b>.</h2>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+            <section id="slide-3" class="homeSlide ">
+                <div class="bcg"  data-anchor-target="#slide-3">
+                    <div class="curtainContainer">
+
+                        <div class="curtain" data-anchor-target="#slide-3"></div>
+                        <div class="copy" data-bottom-top="opacity: 0" data--100-bottom="opacity: 0" data--280-bottom="opacity: 1;" data-280-top="opacity: 1;" data-106-top="opacity: 0;" data-anchor-target="#slide-3 .copy">
+                            <h2><b>45%</b> of Category Sales came from the Top 25 CPG companies</h2>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+            <section id="slide-4" class="homeSlide ">
+                <div class="bcg"  data-anchor-target="#slide-4">
+                    <div class="curtainContainer">
+
+                        <div class="curtain" data-anchor-target="#slide-4"></div>
+                        <div class="copy" data-bottom-top="opacity: 0" data--100-bottom="opacity: 0" data--280-bottom="opacity: 1;" data-280-top="opacity: 1;" data-106-top="opacity: 0;" data-anchor-target="#slide-4 .copy">
+                            <h2>...yet only <b>3%</b> Category Growth constituted those same companies...</h2>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+            <section id="slide-5" class="homeSlide ">
+                <div class="bcg"  data-anchor-target="#slide-5">
+                    <div class="curtainContainer">
+
+                        <div class="curtain" data-anchor-target="#slide-5"></div>
+                        <div class="copy" data-bottom-top="opacity: 0" data--100-bottom="opacity: 0" data--280-bottom="opacity: 1;" data-280-top="opacity: 1;" data-106-top="opacity: 0;" data-anchor-target="#slide-5 .copy">
+                            <h2>...compared to <b>23%</b> Category Growth by private labels...</h2>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+            <section id="slide-6" class="homeSlide ">
+                <div class="bcg"  data-anchor-target="#slide-6">
+                    <div class="curtainContainer">
+
+                        <div class="curtain" data-anchor-target="#slide-6"></div>
+                        <div class="copy" data-bottom-top="opacity: 0" data--100-bottom="opacity: 0" data--280-bottom="opacity: 1;" data-280-top="opacity: 1;" data-106-top="opacity: 0;" data-anchor-target="#slide-6 .copy">
+                            <h2>...and <b>25%</b> Category Growth by the top 26-100 CPG companies...</h2>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+            <section id="slide-7" class="homeSlide ">
+                <div class="bcg"  data-anchor-target="#slide-7">
+                    <div class="curtainContainer">
+
+                        <div class="curtain" data-anchor-target="#slide-7"></div>
+                        <div class="copy" data-bottom-top="opacity: 0" data--100-bottom="opacity: 0" data--280-bottom="opacity: 1;" data-280-top="opacity: 1;" data-106-top="opacity: 0;" data-anchor-target="#slide-7 .copy">
+                            <h2>...and <b>49%</b> Category Growth by the top 101-20000 CPG companies.</h2>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+            <section id="slide-8" class="homeSlide ">
+                <div class="bcg"  data-anchor-target="#slide-8">
+                    <div class="curtainContainer">
+
+                        <div class="curtain" data-anchor-target="#slide-8"></div>
+                        <div class="copy" data-bottom-top="opacity: 0" data--100-bottom="opacity: 0" data--280-bottom="opacity: 1;" data-280-top="opacity: 1;" data-106-top="opacity: 0;" data-anchor-target="#slide-8 .copy">
+                            <h2><b>DIGITAL TRANSFORMATION</b> is a necessity for consumer industry incumbents to survive not just grow</h2>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+            <section id="slide-9" class="homeSlide homeSlideTall2">
+                    <div class="bcg">
+                        &nbsp;
+                    </div>
+                    <div class="bcg bcg2" data-bottom-top="opacity: 0;" data--33p-top="opacity: 0;" data--66p-top="opacity: 1;" data-anchor-target="#slide-9">
+                        <div class="hsContainer">
+                            <div class="hsContent" data-bottom-top="opacity: 0;" data-center="opacity: 1" data-anchor-target="#slide-9">
+                                <h2><b>“Difficulties mastered are opportunities won.”</b></h2>
+                                <h2>-Winston Churchill</h2>
+                            </div>
+                        </div>
+                    </div>
+		    	
+		    </section>
+
+		    
+		</main>
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+        <script src="js/imagesloaded.js"></script>
+        <script src="js/skrollr.js"></script>
+        <script src="js/_main.js"></script>
+
+    </body>
+</html>
