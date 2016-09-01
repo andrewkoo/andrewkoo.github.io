@@ -169,14 +169,15 @@ main {
 
     
 /* Slide 2 Consumer Industry is Changing... */
-#slide-2 h2 {color: rgb(0,187,238);} /* Sky Blue */ 
+#slide-2 h2 {font-size:30px; color: rgb(0,187,238);} /* Sky Blue */ 
 #slide-2 b {color: rgb(255,181,0);}
+
 
 /* Slide 3 */
 #slide-3 h2 {font-size:20px; color:rgb(0,187,238);}
 
 /* Slide 4 */
-#slide-4 h2 {color: rgb(64,143,205);}
+#slide-4 h2 {font-size:36px; color: rgb(64,143,205);}
 #slide-4 b {color: rgb(255,181,0);}
 
 /* Slide 5 */
